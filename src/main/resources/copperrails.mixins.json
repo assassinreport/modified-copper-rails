@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "net.assassinreport.copperrails.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"AbstractMinecartMixin",
+		"RailStateMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
