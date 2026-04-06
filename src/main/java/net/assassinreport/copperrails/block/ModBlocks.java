@@ -1,11 +1,9 @@
 package net.assassinreport.copperrails.block;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.assassinreport.copperrails.CopperRails;
 import net.assassinreport.copperrails.block.custom.CrossingRailBlock;
 import net.assassinreport.copperrails.block.custom.GenericCopperRailBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
@@ -18,19 +16,19 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block COPPER_RAIL = registerBlock("copper_rail",
-            new GenericCopperRailBlock(FabricBlockSettings.copyOf(Blocks.POWERED_RAIL).mapColor(MapColor.ORANGE)));
+            new GenericCopperRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL).mapColor(MapColor.ORANGE)));
 
     public static final Block RAIL_CROSSING= registerBlock("rail_crossing",
-            new CrossingRailBlock(FabricBlockSettings.copyOf(Blocks.POWERED_RAIL)));
+            new CrossingRailBlock(AbstractBlock.Settings.copy(Blocks.POWERED_RAIL)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(CopperRails.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(CopperRails.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(CopperRails.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModBlocks() {

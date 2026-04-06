@@ -18,8 +18,7 @@
     "XRX"
   ],
   "result": {
-    "count": 12,
-    "item": "minecraft:powered_rail"
-  },
-  "show_notification": true
+    "count": 6,
+    "id": "minecraft:powered_rail"
+  }
 }

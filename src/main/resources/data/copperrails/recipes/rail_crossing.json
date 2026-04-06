@@ -14,11 +14,11 @@
   },
   "pattern": [
     "X#X",
-    "#R#",
+    "XRX",
     "X#X"
   ],
   "result": {
-    "item": "copperrails:rail_crossing"
-  },
-  "show_notification": true
+    "count": 6,
+    "id": "copperrails:rail_crossing"
+  }
 }
