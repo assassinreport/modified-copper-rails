@@ -1,7 +1,5 @@
 package net.assassinreport.copperrails.block;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.assassinreport.copperrails.CopperRails;
 import net.assassinreport.copperrails.block.custom.CrossingRailBlock;
 import net.assassinreport.copperrails.block.custom.GenericCopperRailBlock;
@@ -28,9 +26,9 @@ public class ModBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(CopperRails.MOD_ID, name), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(CopperRails.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+    private static void registerBlockItem(String name, Block block) {
+        Registry.register(Registries.ITEM, Identifier.of(CopperRails.MOD_ID, name),
+                new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModBlocks() {
