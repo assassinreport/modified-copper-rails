@@ -18,11 +18,11 @@ public class GenericCopperRailBlock extends PoweredRailBlock {
         if (!blockState.isOf(this)) {
             return false;
         } else {
-            RailShape railShape = (RailShape)blockState.get(SHAPE);
+            RailShape railShape = blockState.get(SHAPE);
             if (shape != RailShape.EAST_WEST || railShape != RailShape.NORTH_SOUTH && railShape != RailShape.ASCENDING_NORTH && railShape != RailShape.ASCENDING_SOUTH) {
                 if (shape != RailShape.NORTH_SOUTH || railShape != RailShape.EAST_WEST && railShape != RailShape.ASCENDING_EAST && railShape != RailShape.ASCENDING_WEST) {
-                    if ((Boolean)blockState.get(POWERED)) {
-                        return world.isReceivingRedstonePower(pos) ? true : this.isPoweredByOtherRails(world, pos, blockState, bl, distance + 1);
+                    if (blockState.get(POWERED)) {
+                        return world.isReceivingRedstonePower(pos) || this.isPoweredByOtherRails(world, pos, blockState, bl, distance + 1);
                     } else {
                         return false;
                     }
