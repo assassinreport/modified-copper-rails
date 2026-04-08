@@ -19,7 +19,7 @@ public class CopperRailsClient implements ClientModInitializer {
     }
 
     private static void initializeResourcePack() {
-        Identifier id = new Identifier(CopperRails.MOD_ID, "copperrails3d");
+        Identifier id = Identifier.of(CopperRails.MOD_ID, "copperrails3d");
         ModContainer modContainer = FabricLoader.getInstance().getModContainer(CopperRails.MOD_ID).orElseThrow();
         ResourceManagerHelper.registerBuiltinResourcePack(id, modContainer, Text.of("CopperRails 3D Rails"), ResourcePackActivationType.NORMAL);
     }
