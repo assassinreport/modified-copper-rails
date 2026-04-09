@@ -3,7 +3,7 @@
 	"package": "net.assassinreport.copperrails.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"AbstractMinecartMixin",
+		"DefaultMinecartControllerMixin",
 		"RailStateMixin"
 	],
 	"injectors": {

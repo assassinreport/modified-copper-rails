@@ -1,5 +1,5 @@
 {
-  "block.copperrails.copper_rail": "Copper Powered Rail",
+  "item.copperrails.copper_rail": "Copper Powered Rail",
 
-  "block.copperrails.rail_crossing": "Crossing Rail"
+  "item.copperrails.rail_crossing": "Crossing Rail"
 }
